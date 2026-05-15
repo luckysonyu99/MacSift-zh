@@ -1,0 +1,157 @@
+/* MacSift — 简体中文字符串 */
+
+// ─── 侧边栏和顶级导航 ────────────────────────────────────
+"MacSift" = "MacSift";
+"Start Scan" = "开始扫描";
+"Cancel Scan" = "取消扫描";
+"Cancelling…" = "正在取消…";
+"Rescan" = "重新扫描";
+"Scan now" = "立即扫描";
+"Inspector" = "检查器";
+"Sort" = "排序";
+"Sort by" = "排序方式";
+"Sort file list" = "排序文件列表";
+"Rescan disk (⌘R)" = "重新扫描磁盘 (⌘R)";
+"Toggle inspector" = "切换检查器";
+
+// ─── 欢迎屏幕 ────────────────────────────────────────────
+"Welcome to MacSift" = "欢迎使用 MacSift";
+"Discover what's taking up space, with full transparency." = "透明地发现占用空间的内容。";
+"Grant Access" = "授予访问权限";
+"Full Disk Access required" = "需要完全磁盘访问权限";
+
+// ─── 扫描进度 ─────────────────────────────────────────────
+"Scanning your disk" = "正在扫描磁盘";
+"Categorizing files for transparency" = "正在分类文件以提高透明度";
+
+// ─── 结果标题和存储栏 ──────────────────────────────────────
+"All Categories" = "所有类别";
+"Clear filter" = "清除筛选";
+"Storage Found" = "发现的存储空间";
+"reclaimable" = "可回收";
+"Filter by name" = "按名称筛选";
+
+// ─── 底部操作栏 ─────────────────────────────────────────────
+"Tick rows to select what to clean" = "勾选行以选择要清理的内容";
+"Clean Selected" = "清理所选";
+"Select all safe" = "选择所有安全项";
+
+// ─── 卷选择器 ─────────────────────────────────────────────
+"Volumes" = "卷";
+"All volumes" = "所有卷";
+"Startup disk" = "启动磁盘";
+"External" = "外部";
+"mounted" = "已挂载";
+
+// ─── 类别标签 ───────────────────────────────────────────────
+"category.cache" = "缓存";
+"category.logs" = "日志";
+"category.tempFiles" = "临时文件";
+"category.appData" = "未使用的应用数据";
+"category.largeFiles" = "大文件";
+"category.timeMachineSnapshots" = "时间机器快照";
+"category.iosBackups" = "iOS 备份";
+"category.xcodeJunk" = "Xcode 垃圾";
+"category.devCaches" = "开发缓存";
+"category.oldDownloads" = "旧下载";
+"category.mailDownloads" = "邮件附件";
+
+// ─── 风险级别 ───────────────────────────────────────────────
+"risk.safe" = "安全删除";
+"risk.moderate" = "建议审查";
+"risk.risky" = "谨慎使用";
+
+// ─── 排序选项 ──────────────────────────────────────────────
+"sort.sizeDesc" = "大小（最大优先）";
+"sort.sizeAsc" = "大小（最小优先）";
+"sort.nameAsc" = "名称（A-Z）";
+"sort.mostRecent" = "最近优先";
+"sort.oldestFirst" = "最旧优先";
+
+// ─── 设置窗口 ───────────────────────────────────────────────
+"General" = "通用";
+"Mode" = "模式";
+"Simple" = "简单";
+"Advanced" = "高级";
+"Dry Run (simulate deletions)" = "演练模式（模拟删除）";
+"Large file threshold" = "大文件阈值";
+"Old Downloads threshold" = "旧下载阈值";
+"MB" = "MB";
+"days" = "天";
+"Rescan to apply the new threshold." = "重新扫描以应用新阈值。";
+"Excluded Folders" = "排除的文件夹";
+"No folders are excluded from scans." = "没有从扫描中排除的文件夹。";
+"Add Folder" = "添加文件夹";
+"Suggested…" = "建议…";
+"Add all" = "全部添加";
+"Stats" = "统计";
+"Scans run" = "扫描次数";
+"Total cleaned" = "总清理量";
+"Permissions" = "权限";
+"Full Disk Access" = "完全磁盘访问权限";
+"Granted" = "已授予";
+"Open System Settings" = "打开系统设置";
+"Reset all settings" = "重置所有设置";
+"Clears mode, dry-run, threshold, and all excluded folders." = "清除模式、演练模式、阈值和所有排除的文件夹。";
+"Reset…" = "重置…";
+"Reset all MacSift settings?" = "重置所有 MacSift 设置？";
+"Reset" = "重置";
+"Cancel" = "取消";
+"This clears your mode, dry-run preference, large file threshold, and the list of excluded folders. Your files on disk are not touched." = "这将清除您的模式、演练模式偏好、大文件阈值和排除文件夹列表。磁盘上的文件不会被触及。";
+"Uninstall MacSift" = "卸载 MacSift";
+"Erases settings, audit log, downloaded updates, and moves MacSift.app to the Trash." = "清除设置、审计日志、已下载的更新，并将 MacSift.app 移至废纸篓。";
+"Uninstall…" = "卸载…";
+"Uninstall MacSift?" = "卸载 MacSift？";
+"Uninstall" = "卸载";
+"MacSift uninstalled" = "MacSift 已卸载";
+"Quit" = "退出";
+"Done" = "完成";
+
+// ─── 清理预览 ──────────────────────────────────────────────
+"Review what will be cleaned" = "查看将要清理的内容";
+"Dry Run" = "演练模式";
+"Real Clean" = "真实清理";
+"files will be moved to the Trash" = "文件将被移至废纸篓";
+"files would be freed (dry run — nothing deleted)" = "文件将被释放（演练模式 — 不会删除任何内容）";
+"Cleaning" = "正在清理";
+"Cancel cleaning" = "取消清理";
+"Freed: " = "已释放：";
+"files could not be deleted" = "文件无法删除";
+"Moved to Trash" = "已移至废纸篓";
+"All files went to ~/.Trash. Nothing was permanently deleted." = "所有文件已移至 ~/.Trash。没有永久删除任何内容。";
+"Reveal in Finder" = "在访达中显示";
+"Finish the job?" = "完成任务？";
+"Empty Trash" = "清空废纸篓";
+"Empty the Trash?" = "清空废纸篓？";
+
+// ─── 更新横幅 ─────────────────────────────────────────────
+"is available" = "可用";
+"You have" = "您当前版本";
+"download" = "下载";
+"Release notes" = "发布说明";
+"Download update" = "下载更新";
+"Drag into /Applications" = "拖入 /Applications";
+"Open release page" = "打开发布页面";
+"Dismiss until the next release" = "忽略直到下一个版本";
+
+// ─── 重复文件视图 ───────────────────────────────────────────
+"Duplicates" = "重复文件";
+"sets · " = "组 · ";
+"reclaimable" = "可回收";
+"No duplicates found" = "未找到重复文件";
+"Every scanned file larger than 1 MB is unique by content." = "每个大于 1 MB 的扫描文件内容都是唯一的。";
+"Keep oldest, trash the rest" = "保留最旧的，删除其余";
+
+// ─── 菜单栏弹出窗口 ──────────────────────────────────────────
+"Open MacSift" = "打开 MacSift";
+"cleaned" = "已清理";
+"used" = "已使用";
+"total" = "总计";
+"free of" = "可用";
+"Memory" = "内存";
+"CPU" = "CPU";
+"Thermal: nominal" = "温度：正常";
+"Thermal: fair" = "温度：良好";
+"Thermal: serious" = "温度：严重";
+"Thermal: critical" = "温度：危险";
+"Thermal: unknown" = "温度：未知";
