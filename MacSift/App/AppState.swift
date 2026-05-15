@@ -1,0 +1,67 @@
+import SwiftUI
+
+/// App-wide observable state. We can't use @AppStorage here because that
+/// property wrapper is designed for use directly on Views, not inside an
+/// ObservableObject — it doesn't compose with @Published. The didSet pattern
+/// below is the idiomatic alternative for an ObservableObject that mirrors
+/// values to UserDefaults.
+@MainActor
+final class AppState: ObservableObject {
+    enum Mode: String, CaseIterable {
+        case simple
+        case advanced
+    }
+
+    @Published var mode: Mode {
+        didSet { UserDefaults.standard.set(mode.rawValue, forKey: "appMode") }
+    }
+
+    @Published var isDryRun: Bool {
+        didSet { UserDefaults.standard.set(isDryRun, forKey: "isDryRun") }
+    }
+
+    @Published var largeFileThresholdMB: Int {
+        didSet { UserDefaults.standard.set(largeFileThresholdMB, forKey: "largeFileThresholdMB") }
+    }
+
+    /// Files in ~/Downloads older than this many days are flagged as
+    /// `.oldDownloads`. Default 90 — users with very aggressive cleanup
+    /// habits might want 30; conservative users might set 365.
+    @Published var oldDownloadsAgeDays: Int {
+        didSet { UserDefaults.standard.set(oldDownloadsAgeDays, forKey: "oldDownloadsAgeDays") }
+    }
+
+    /// Total number of scans run since install. Incremented once per
+    /// completed scan in `ScanViewModel`.
+    @Published var lifetimeScanCount: Int {
+        didSet { UserDefaults.standard.set(lifetimeScanCount, forKey: "lifetimeScanCount") }
+    }
+
+    /// Total bytes moved to the Trash since install. Incremented by the
+    /// freed size of each successful non-dry-run cleaning in `CleaningViewModel`.
+    @Published var lifetimeCleanedBytes: Int64 {
+        didSet { UserDefaults.standard.set(lifetimeCleanedBytes, forKey: "lifetimeCleanedBytes") }
+    }
+
+    /// When true, MacSift installs a menu bar icon that opens a popover
+    /// with live disk / memory / CPU metrics. Defaults to true — the
+    /// feature is opt-out rather than opt-in so users discover it.
+    @Published var showMenuBarExtra: Bool {
+        didSet { UserDefaults.standard.set(showMenuBarExtra, forKey: "showMenuBarExtra") }
+    }
+
+    init() {
+        let savedMode = UserDefaults.standard.string(forKey: "appMode") ?? Mode.simple.rawValue
+        self.mode = Mode(rawValue: savedMode) ?? .simple
+        self.isDryRun = UserDefaults.standard.object(forKey: "isDryRun") as? Bool ?? true
+        self.largeFileThresholdMB = UserDefaults.standard.object(forKey: "largeFileThresholdMB") as? Int ?? 500
+        self.oldDownloadsAgeDays = UserDefaults.standard.object(forKey: "oldDownloadsAgeDays") as? Int ?? 90
+        self.lifetimeScanCount = UserDefaults.standard.integer(forKey: "lifetimeScanCount")
+        self.lifetimeCleanedBytes = Int64(UserDefaults.standard.integer(forKey: "lifetimeCleanedBytes"))
+        self.showMenuBarExtra = UserDefaults.standard.object(forKey: "showMenuBarExtra") as? Bool ?? true
+    }
+
+    var largeFileThresholdBytes: Int64 {
+        Int64(largeFileThresholdMB) * 1024 * 1024
+    }
+}
